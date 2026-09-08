@@ -1,6 +1,20 @@
 import "./like-button.css";
-export function LikeButton() {
-    const count = 999;
+import { useState } from "react";
 
-    return <button className="like" type="button">{count}</button>
+export function LikeButton() {
+  const [count, setCount] = useState(999);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <button
+      className="like"
+      onClick={handleClick}
+      type="button"
+    >
+      {count}
+    </button>
+  );
 }
